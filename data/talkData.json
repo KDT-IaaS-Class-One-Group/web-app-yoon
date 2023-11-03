@@ -17,5 +17,21 @@
   "",
   "",
   "",
-  ""
+  "",
+  null,
+  {
+    "type": "user",
+    "message": "",
+    "timestamp": "21시 6분"
+  },
+  {
+    "type": "user",
+    "message": "",
+    "timestamp": "21시 6분"
+  },
+  {
+    "type": "user",
+    "message": "ㅁㄴㅇㅁㄴㅇ",
+    "timestamp": "21시 6분"
+  }
 ]

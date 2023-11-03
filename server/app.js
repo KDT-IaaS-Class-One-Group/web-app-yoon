@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-import { User } from '../public/module/class.js';
+// import { User } from '../public/module/class.js';
+// const User = require('../public/module/class.js');
 
 // 테스트 전용 옵션
 const path = require('path')
@@ -49,7 +50,7 @@ app.post('/save-text', (req, res) => {
   console.log(data);
 
   // 2. 새로운 text 추가
-  texts.push(new User(text));
+  texts.push(text);
 
   // 3. 파일에 업데이트 된 내용 저장
   fs.writeFile(filePath, JSON.stringify(texts, null, 2), (err) => {

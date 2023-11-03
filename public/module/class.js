@@ -1,4 +1,4 @@
-class User {
+export class User {
   constructor(userInput){
     this.type = "user";
     this.message = userInput

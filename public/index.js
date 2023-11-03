@@ -6,6 +6,8 @@ import { User } from "./module/class.js";
 const container = document.getElementById('container');
 const submit = document.getElementById('submit');
 const input = document.getElementById('userInput');
+// const inputQs = document.querySelector('#userInput')
+
 
 window.addEventListener('DOMContentLoaded',async()=>{
 
@@ -32,13 +34,11 @@ window.addEventListener('DOMContentLoaded',async()=>{
 
   })
   .catch(err => console.log("에러발생",err))
-
 });
 
-// ! 눌렀을 때, 나타남, 로딩전에도 하나 만들어야 한다.
 submit.addEventListener('click',async ()=>{
   // ! 모듈로 나눠봄직한 writefile 로직
-  const inputValue = input.value;
+  const inputValue = new User(input.value);
   console.log("dlsvnt",inputValue);
   await fetch('/save-text', {
     method: 'POST',
@@ -49,7 +49,8 @@ submit.addEventListener('click',async ()=>{
   })
 
 
-  const response = await fetch('/read-data') // 요청 날리기
+  const response = await fetch('/read-data'); // 요청 날리기
+  console.log(response.json());
   response.json() // 반은 데이터 변환
   .then(data => {
     console.log("then 실행");
