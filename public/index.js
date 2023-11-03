@@ -6,20 +6,26 @@ const container = document.getElementById('container');
 const submit = document.getElementById('submit');
 const input = document.getElementById('userInput');
 console.log(container, input);
-// DOMContentLoaded
+// , 눌렀을 때, 
 submit.addEventListener('click',async ()=>{
   const inputValue = input.value;
   console.log("dlsvnt",inputValue);
-  const response = await fetch('/read-data');
   await fetch('/save-text', {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify({inputValue})
   })
-
+  const response = await fetch('/read-data')
+  const talkData = await response.json()
+  .then(data => {
+    console.log("then 실행");
+    console.table(data);
+    
     // document.querySelector('.pokeBox').textContent = data.text;
+  })
+  .catch(err => console.log("에러발생",err))
 
   })
 
