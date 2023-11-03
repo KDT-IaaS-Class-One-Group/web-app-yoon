@@ -18,7 +18,6 @@
   "",
   "",
   "",
-  null,
   {
     "type": "user",
     "message": "",
@@ -33,5 +32,6 @@
     "type": "user",
     "message": "ㅁㄴㅇㅁㄴㅇ",
     "timestamp": "21시 6분"
-  }
+  },
+  null
 ]

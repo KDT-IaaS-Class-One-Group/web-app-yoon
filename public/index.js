@@ -6,7 +6,6 @@ import { User } from "./module/class.js";
 const container = document.getElementById('container');
 const submit = document.getElementById('submit');
 const input = document.getElementById('userInput');
-// const inputQs = document.querySelector('#userInput')
 
 
 window.addEventListener('DOMContentLoaded',async()=>{
@@ -34,6 +33,12 @@ window.addEventListener('DOMContentLoaded',async()=>{
 
   })
   .catch(err => console.log("에러발생",err))
+});
+
+input.addEventListener('keydown', (event)=>{
+  if(event.keyCode === 13){
+    event.preventDefault();
+  }
 });
 
 submit.addEventListener('click',async ()=>{
