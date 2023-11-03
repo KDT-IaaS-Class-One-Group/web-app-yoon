@@ -3,7 +3,24 @@ console.log('hbg');
 const topbtn = document.getElementById('hbg-top');
 const hbgCont = document.getElementById('hamburgerContainer');
 const root = document.getElementById('root');
+const container = document.getElementById('container');
 console.dir(root);
+
+const widthSetInterval = (range) => {
+  let temp = 0;
+  let nowWidth = 80;
+  let movement = setInterval(()=>{
+    if(temp < range) {
+      temp++;
+      console.log(temp);
+      container.style.width = nowWidth + temp+"vw";
+    } else {
+      clearInterval(movement)
+    }
+  }, 1)
+}
+
+widthSetInterval(20);
 
 
 // 1. 버튼을 누르면 이벤트
