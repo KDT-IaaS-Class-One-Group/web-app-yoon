@@ -1,0 +1,36 @@
+/* commcon */
+* {
+  margin :0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
+}
+/* class style --------- */
+flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+flex-col {
+  flex-direction: column;
+}
+
+
+/* id part ----------*/
+#hamburgerContainer {
+  width: 20vw;
+  height : 100vh;
+}
+
+#root {
+  /* 스크롤 방지 */
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
