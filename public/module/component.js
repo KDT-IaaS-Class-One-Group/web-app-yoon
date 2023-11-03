@@ -17,7 +17,7 @@
  */
 
 
-function component(elementNode, attributes, children){
+export function component(elementNode, attributes, children){
   // html element 문자열로 "조립 assemble"하는 패턴
   let elementStr = `<${elementNode}`;
   for (let key in attributes) {
