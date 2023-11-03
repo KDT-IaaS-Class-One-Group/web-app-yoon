@@ -1,5 +1,3 @@
-
-
 /* commcon */
 * {
   margin :0;
@@ -14,16 +12,19 @@ li {
   list-style: none;
 }
 /* class style --------- */
-flex {
+.flex {
   display: flex;
   justify-content: center;
   align-items: center;
   gap : 1vw;
 }
-flex-col {
+.flex-col {
   flex-direction: column;
 }
-hbg-menu {
+.justify-end {
+  justify-content: end;
+}
+.hbg-menu {
   width: 100%;
   height: 10vh;
   font-weight: 700;
@@ -50,7 +51,7 @@ hbg-menu {
 #hbg-top, #hbg-bottom {
   width: 100%;
   height: 10vh;
-  background-color: #dbd7d7;
+  background-color: #f0e9e9;
 }
 
 #root {
@@ -68,4 +69,5 @@ hbg-menu {
   height: 100vh;
   outline: 1px solid black;
   background-color: #dbd7d7;
+  padding: 5vw;
 }
