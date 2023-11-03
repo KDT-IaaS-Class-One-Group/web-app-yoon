@@ -21,8 +21,8 @@ app.get('/', (req, res) => {
 // * data.json을 읽도록 요청받은 것을 해결하여 데이터를 보낸다.
 
 app.get('/read-data', (req, res) => {
-  const dataPath = path.join(__dirname, './public/data/data.json');
-  const data = fs.readFileSync(dataPath, 'utf8');
+  const filePath = path.join(__dirname, '../data/talkData.json');
+  const data = fs.readFileSync(filePath, 'utf8');
   res.send(data);
 });
 

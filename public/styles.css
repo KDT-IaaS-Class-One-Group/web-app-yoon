@@ -12,6 +12,11 @@ li {
   list-style: none;
 }
 /* class style --------- */
+.btn {
+  width: 70px;
+  height: 20px;
+  background-color: #999;
+}
 .flex {
   display: flex;
   justify-content: center;
