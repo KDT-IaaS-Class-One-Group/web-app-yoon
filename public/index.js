@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded',async()=>{
   .then(data => {
     console.log("then 실행");
     console.table(data);
-    // console.log(new User(data));
+    console.log(data);
 
     let formTag = `
     <form action="/save-text" method="POST">
@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded',async()=>{
     // 반복하여 컴포넌트 생성하는 로직 추가
     let result ="";
       for(let i=0; i<data.length; i++){
-        result += component('div',{ class : "chat" },[data[i]])
+        result += component('div',{ class : "chat" },[data[i].message])
       }
     container.innerHTML = result+formTag;
 
@@ -38,7 +38,10 @@ window.addEventListener('DOMContentLoaded',async()=>{
 
 submit.addEventListener('click',async ()=>{
   // ! 모듈로 나눠봄직한 writefile 로직
-  const inputValue = new User(input.value);
+  if(input.value === ""){
+    console.error("다시 입력해주십시오")
+  } else {
+  let inputValue = new User(input.value);
   console.log("dlsvnt",inputValue);
   await fetch('/save-text', {
     method: 'POST',
@@ -67,12 +70,11 @@ submit.addEventListener('click',async ()=>{
     // 반복하여 컴포넌트 생성하는 로직 추가
     let result ="";
       for(let i=0; i<data.length; i++){
-        result += component('div',{ class : "chat" },[data[i]])
+        result += component('div',{ class : "chat" },[data[i].message])
       }
     container.innerHTML = result+formTag;
 
   })
-  .catch(err => console.log("에러발생",err))
-
-  })
-
+  .catch(err => console.log("에러발생",err))  
+  }
+})
