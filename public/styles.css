@@ -1,3 +1,5 @@
+
+
 /* commcon */
 * {
   margin :0;
@@ -16,16 +18,39 @@ flex {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap : 1vw;
 }
 flex-col {
   flex-direction: column;
 }
-
+hbg-menu {
+  width: 100%;
+  height: 10vh;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* id part ----------*/
 #hamburgerContainer {
   width: 20vw;
   height : 100vh;
+  position: absolute;
+  top: 0; left: 0;
+  background-color: #999;
+}
+#hamburgerContainer div {
+  outline: 1px solid black;
+}
+#hbg-mid {
+  width: 100%;
+  height: 80vh;
+}
+#hbg-top, #hbg-bottom {
+  width: 100%;
+  height: 10vh;
+  background-color: #dbd7d7;
 }
 
 #root {
@@ -33,4 +58,14 @@ flex-col {
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: end;
+
+}
+
+#container {
+  width: 80vw;
+  height: 100vh;
+  outline: 1px solid black;
+  background-color: #dbd7d7;
 }
