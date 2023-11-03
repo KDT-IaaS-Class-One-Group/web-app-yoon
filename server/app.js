@@ -6,9 +6,9 @@ const path = require('path')
 const fs = require('fs');
 
 
-app.use(express.urlencoded({ extended : true }));
-app.use(express.json());
-app.use(express.static('public'));
+app.use(express.urlencoded({ extended : true })); // 폼데이터전용
+app.use(express.json()); // 요청 body
+app.use(express.static('public')); 
 
 // 메인 페이지 라우트
 app.get('/', (req, res) => {
@@ -16,13 +16,12 @@ app.get('/', (req, res) => {
 });
 
 
-
 // * loadData전용 라우팅 /data 엔드폰이트로 작성된다.
 // * data.json을 읽도록 요청받은 것을 해결하여 데이터를 보낸다.
 
-app.get('/read-data', (req, res) => {
+app.get('/read-data', async (req, res) => {
   const filePath = path.join(__dirname, '../data/talkData.json');
-  const data = fs.readFileSync(filePath, 'utf8');
+  const data = fs.readFileSync(filePath, 'utf8')
   res.send(data);
 });
 
@@ -36,7 +35,6 @@ app.post('/save-text', (req, res) => {
   console.table(req.body); // 확인 완료
   // 파일 경로 설정
   const filePath = path.join(__dirname, '../data/talkData.json');
-  console.log(filePath);
   // 파일의 현재 내용 읽기
   fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
@@ -47,7 +45,7 @@ app.post('/save-text', (req, res) => {
   if (data) {
       texts = JSON.parse(data);
   }
-  // console.log(texts);
+  console.log(data);
 
   // 2. 새로운 text 추가
   texts.push(text);
