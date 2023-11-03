@@ -35,11 +35,6 @@ window.addEventListener('DOMContentLoaded',async()=>{
   .catch(err => console.log("에러발생",err))
 });
 
-input.addEventListener('keydown', (event)=>{
-  if(event.keyCode === 13){
-    event.preventDefault();
-  }
-});
 
 submit.addEventListener('click',async ()=>{
   // ! 모듈로 나눠봄직한 writefile 로직
@@ -52,10 +47,12 @@ submit.addEventListener('click',async ()=>{
     },
     body: JSON.stringify({inputValue})
   })
+  .then(data => console.log("submit 버튼 작동, post를 보냅니다.", data))
+  .catch(err => console.error(err + "이러한 에러 발생"));
 
 
   const response = await fetch('/read-data'); // 요청 날리기
-  console.log(response.json());
+  console.log( "53번줄 response.json : "+response.json());
   response.json() // 반은 데이터 변환
   .then(data => {
     console.log("then 실행");
