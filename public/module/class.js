@@ -6,5 +6,5 @@ class User {
   }
 }
 
-const exam = new User('안녕하십니까');
-console.log(exam);
+// const exam = new User('안녕하십니까');
+// console.log(exam);

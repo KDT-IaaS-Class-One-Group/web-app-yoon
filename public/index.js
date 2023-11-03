@@ -1,5 +1,6 @@
 console.log('index.js 시작');
 import { component } from "./module/component.js";
+import { User } from "./module/class.js";
 
 // 전역 변수
 const container = document.getElementById('container');
@@ -14,6 +15,7 @@ window.addEventListener('DOMContentLoaded',async()=>{
   .then(data => {
     console.log("then 실행");
     console.table(data);
+    // console.log(new User(data));
 
     let formTag = `
     <form action="/save-text" method="POST">
