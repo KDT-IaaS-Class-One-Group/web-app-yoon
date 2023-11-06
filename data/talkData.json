@@ -38,5 +38,10 @@
     "type": "user",
     "message": "가나다라111",
     "timestamp": "11시 39분"
+  },
+  {
+    "type": "user",
+    "message": "인풋이 잘 작동되나?",
+    "timestamp": "12시 6분"
   }
 ]

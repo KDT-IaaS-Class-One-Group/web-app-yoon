@@ -2,6 +2,7 @@ import { component } from "./component.js";
 
 // 반복하여 컴포넌트 생성하는 로직 추가
 export const addComponent = (data)=>{
+  const container = document.getElementById('container');
   let result ="";
   for(let i=0; i<data.length; i++){
     result += component('div',{ class : "chat" },[data[i].message])
