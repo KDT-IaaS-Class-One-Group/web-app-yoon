@@ -9,6 +9,7 @@ export const readJson = async ( callback )=>{
   response.json() // 받은 데이터 변환
   .then(data => {
     callback(data);
+    console.log('readJson이 작동했다.');
   })
   .catch(err => console.log("에러발생",err))
 };

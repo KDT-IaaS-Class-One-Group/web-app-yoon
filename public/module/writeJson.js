@@ -19,7 +19,7 @@ export const writeJson = async ()=>{
   })
   .then(data => {
     // 확인용 콘솔로그
-    console.log("submit 버튼 작동, post를 보냅니다.", data);
+    console.log("submit 버튼 작동 완료, post를 보냅니다.", data);
   })
   .catch(
     err => console.error(err + "이러한 에러 발생")
