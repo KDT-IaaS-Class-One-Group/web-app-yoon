@@ -25,7 +25,7 @@ export const writeJson = async () => {
       console.error('네트워크 response.ok 에러');
     }
     // 확인용 콘솔로그
-    return console.log("submit 버튼 작동 완료, post를 보냅니다.");
+    console.log("submit 버튼 작동 완료, post를 보냅니다.");
   } catch (err) {
     console.error("이러한 에러 발생", err);
   }

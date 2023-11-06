@@ -258,5 +258,15 @@
     "type": "user",
     "message": "1232",
     "timestamp": "18시 30분"
+  },
+  {
+    "type": "user",
+    "message": "가나다라11",
+    "timestamp": "18시 31분"
+  },
+  {
+    "type": "user",
+    "message": "마지막 로직 테스트",
+    "timestamp": "18시 35분"
   }
 ]
