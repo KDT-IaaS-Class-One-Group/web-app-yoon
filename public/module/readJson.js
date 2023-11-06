@@ -2,6 +2,7 @@
 /**
  * 비동기로 "/read-data로 " 요청을 보냅니다.
  * @param {function} callback 비동기적으로 data를 다룰 함수를뒤에 작성합니다.
+ * @return {Array} 리턴은 data 배열이 넘어갑니다.
  */
 export const readJson = async ( callback )=>{
   console.log(`readJson 시작`);

@@ -23,6 +23,6 @@ export const writeJson = async ()=>{
   })
   .catch(
     err => console.error(err + "이러한 에러 발생")
-    );
+  );
 
 }
