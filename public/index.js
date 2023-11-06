@@ -1,10 +1,9 @@
 console.log('index.js 시작');
 // import { component } from "./module/component.js";
 // import { User } from "./module/class.js";
-// import { writeJson } from "./module/writeJson.js";
+import { writeJson } from "./module/writeJson.js";
 import { addComponent } from "./module/addComponent.js";
 import { readJson } from "./module/readJson.js";
-import { writeJson } from "./module/writeJson.js";
 
 // 전역 변수
 const container = document.getElementById('container'); 
@@ -55,9 +54,8 @@ submit.addEventListener('click',()=>{
   if(input.value === ""){
     console.log("다시 입력해주십시오");
   } else {
-    const writeJson = writeJson();
     // 함수를 실행하여 promise 객체를 저장하는 것이 포인트
-    Promise.all(writeJson)
+    Promise.all(writeJson())
     // .then(console.log('실행 완료, readJson 시작'))
     .then(readJson((data)=>{addComponent(data)}))
     // 호출하는 것이 올바른 패턴은 아니라고 하나. 잘 되는지 체크해본다.

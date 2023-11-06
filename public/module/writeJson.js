@@ -10,8 +10,8 @@ export const writeJson = async () => {
   let inputValue = new User(input.value);
   console.log("dlsvnt", inputValue);
   
-  // fetch를 통한 post 요청
   try {
+    // fetch를 통한 post 요청
     const response = await fetch('/save-text', {
       method: 'POST',
       headers: {
@@ -25,9 +25,9 @@ export const writeJson = async () => {
     }
     // 확인용 콘솔로그
     const result = await response.json();
-    console.log("submit 버튼 작동 완료, post를 보냅니다.", result);
+    return console.log("submit 버튼 작동 완료, post를 보냅니다.", result);
 
-  } catch (err) {
-    console.error("이러한 에러 발생", err);
+  } catch (error) {
+    console.error("이러한 에러 발생", error);
   }
 };
