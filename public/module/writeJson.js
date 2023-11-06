@@ -19,15 +19,14 @@ export const writeJson = async () => {
       },
       body: JSON.stringify({ inputValue })
     });
+    // console.log(response.ok); // true
     // promise의 단점 네트워크 response.ok에러
     if (!response.ok) {
       console.error('네트워크 response.ok 에러');
     }
     // 확인용 콘솔로그
-    const result = await response.json();
-    return console.log("submit 버튼 작동 완료, post를 보냅니다.", result);
-
-  } catch (error) {
-    console.error("이러한 에러 발생", error);
+    return console.log("submit 버튼 작동 완료, post를 보냅니다.");
+  } catch (err) {
+    console.error("이러한 에러 발생", err);
   }
 };

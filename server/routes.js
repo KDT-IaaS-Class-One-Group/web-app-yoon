@@ -42,9 +42,9 @@ router.post('/save-text', (req, res) => {
       if (err) {
         return res.status(500).json({ error: 'Failed to write to the file.' });
       }
+      res.redirect('/');  
     });
   });
-  res.redirect('/');  
   // 사용자를 결과 페이지로 리디렉션합니다.
 });
 
