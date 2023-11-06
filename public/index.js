@@ -1,6 +1,7 @@
 console.log('index.js 시작');
 import { component } from "./module/component.js";
 import { User } from "./module/class.js";
+import { addComponent } from "./module/addComponent.js";
 
 // 전역 변수
 const container = document.getElementById('container'); 
@@ -10,22 +11,17 @@ const input = document.getElementById('userInput');
 console.log( submit, input, body );
 
 
-window.addEventListener('DOMContentLoaded',async()=>{
+window.addEventListener('DOMContentLoaded',async ()=>{
   // ! 모듈로 나눠봄직한 readJson 로직
   const response = await fetch('/read-data') // 요청 날리기
-  await response.json() // 받은 데이터 변환
+  response.json() // 받은 데이터 변환
   .then(data => {
     console.log("then 실행");
     console.table(data);
     console.log(data);
 
-    // 반복하여 컴포넌트 생성하는 로직 추가
-    let result ="";
-      for(let i=0; i<data.length; i++){
-        result += component('div',{ class : "chat" },[data[i].message])
-      }
-    // container.innerHTML = result+formTag;
-    container.innerHTML = result;
+    addComponent(data);
+
   })
   .catch(err => console.log("에러발생",err))
 });
@@ -55,13 +51,7 @@ submit.addEventListener('click',async ()=>{
       console.log("then 실행");
       console.table(data);
 
-      // 반복하여 컴포넌트 생성하는 로직 추가
-      let result ="";
-        for(let i=0; i<data.length; i++){
-          result += component('div',{ class : "chat" },[data[i].message])
-        }
-      // container.innerHTML = result+formTag;
-      container.innerHTML = result;
+      addComponent(data);
     })
     .catch(err => console.log("에러발생",err))  
   }
