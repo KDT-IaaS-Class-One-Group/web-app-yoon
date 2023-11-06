@@ -10,3 +10,17 @@ export const addComponent = (data)=>{
   // 생성한 것을 container에 넣기
   container.innerHTML = result;
 }
+
+// Promise.all(promises).then(allData => {
+//   let result = "";
+//   allData.forEach(data => {
+//     // data는 fetchData에서 반환된 개별 결과입니다.
+//     result += component('div', { class: "chat" }, [data.message]);
+//   });
+  
+//   // 생성한 컴포넌트들을 container에 넣습니다.
+//   container.innerHTML = result;
+// })
+// .catch(error => {
+//   console.error("Error while fetching data", error);
+// });

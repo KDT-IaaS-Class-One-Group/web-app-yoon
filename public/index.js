@@ -13,7 +13,36 @@ const input = document.getElementById('userInput');
 console.log( submit, input, body );
 
 
+// 연습용 promsie function 작성
+function WritePromise(){
+  new Promise((resolve, reject) => {
+  try {
+    resolve(
+      writeJson()
+    );
+  } catch (error) {
+    reject(console.error("오류 발생, promise", err));
+  }
+  })
+};
 
+function readJsonPromise(){
+  new Promise((resolve, reject) => {
+  try {
+    resolve(
+      readJson((data)=>{    
+        addComponent(data);
+      })
+    );
+  } catch (error) {
+    reject(console.error("오류 발생, promise", err));
+  }
+  })
+};
+
+
+
+// 이벤트 및 실행 함수들 모음 ---------
 window.addEventListener('DOMContentLoaded',()=>{
   readJson((data)=>{    
     addComponent(data);
@@ -25,25 +54,20 @@ submit.addEventListener('click',()=>{
   if(input.value === ""){
     console.log("다시 입력해주십시오");
   } else {
-
-    function WritePromise(){
-      new Promise((resolve, reject) => {
-      try {
-        resolve(
-          writeJson()
-          readJson((data)=>{    
-            addComponent(data);
-          });
-        );
-      } catch (error) {
-        reject(console.error("오류 발생, promise", err));
-      }
-      }
-    }
+    WritePromise()
+      .then(()=>{
+        writeJson();
+        return readJsonPromise();
+      })
+      .then(()=>{
+        readJson((data)=>{    
+          addComponent(data);
+        });
+      })
+      // !@#@!#!@#@!#@! 여기서부터 태스트!!!
+      .catch((err)=>{
+        console.error("에러 발생", err);
+      })
   }
-);
+});
 
-   // writeJson()
-      // readJson((data)=>{    
-      //   addComponent(data);
-      // });

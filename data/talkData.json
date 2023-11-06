@@ -48,5 +48,15 @@
     "type": "user",
     "message": "asdasdasd test",
     "timestamp": "12시 34분"
+  },
+  {
+    "type": "user",
+    "message": "asdasd writefile test",
+    "timestamp": "13시 0분"
+  },
+  {
+    "type": "user",
+    "message": "hihi",
+    "timestamp": "13시 11분"
   }
 ]
