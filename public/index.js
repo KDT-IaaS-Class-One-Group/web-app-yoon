@@ -1,7 +1,8 @@
 console.log('index.js 시작');
-import { component } from "./module/component.js";
+// import { component } from "./module/component.js";
 import { User } from "./module/class.js";
 import { addComponent } from "./module/addComponent.js";
+import { readJson } from "./module/readJson.js";
 
 // 전역 변수
 const container = document.getElementById('container'); 
@@ -12,18 +13,9 @@ console.log( submit, input, body );
 
 
 window.addEventListener('DOMContentLoaded',async ()=>{
-  // ! 모듈로 나눠봄직한 readJson 로직
-  const response = await fetch('/read-data') // 요청 날리기
-  response.json() // 받은 데이터 변환
-  .then(data => {
-    console.log("then 실행");
-    console.table(data);
-    console.log(data);
-
+  readJson((data)=>{    
     addComponent(data);
-
-  })
-  .catch(err => console.log("에러발생",err))
+  });
 });
 
 submit.addEventListener('click',async ()=>{
