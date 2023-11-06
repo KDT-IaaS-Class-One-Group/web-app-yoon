@@ -46,8 +46,8 @@ app.post('/save-text', (req, res) => {
   if (data) {
       texts = JSON.parse(data);
   }
-  console.log(data);
-
+  // console.log(data);
+  
   // 2. 새로운 text 추가
   texts.push(text);
 
