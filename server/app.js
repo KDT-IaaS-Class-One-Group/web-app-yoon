@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 });
 
-
 // * loadData전용 라우팅 /data 엔드폰이트로 작성된다.
 // * data.json을 읽도록 요청받은 것을 해결하여 데이터를 보낸다.
 
