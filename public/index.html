@@ -19,11 +19,17 @@
     </ul>
   </div>
   <div id="root">
-    <div id="container" class="flex flex-col justify-end">
-      <!-- 템플이 들어갈 자리 -->
+    <div id="content" class="flex flex-col">
+      <div id="container" class="flex flex-col justify-end">
+        <!-- 템플이 들어갈 자리 -->
+      </div>
+      <!-- input이 들어갈 자리 -->
+      <label class="flex">
+        <input type="text" name="massage" id="userInput"> 
+        <div class="btn" id="submit">요청</div>
+      </label>
     </div>
   </div>
-
   <script type="module" src="./index.js"></script>
   <script src="./module/hamburger.js"></script>
 </body>

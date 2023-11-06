@@ -4,7 +4,10 @@ import { User } from "./module/class.js";
 
 // 전역 변수
 const container = document.getElementById('container'); 
-
+const body = document.body;
+const submit = document.getElementById('submit');
+const input = document.getElementById('userInput');
+console.log( submit, input, body );
 
 
 window.addEventListener('DOMContentLoaded',async()=>{
@@ -28,12 +31,8 @@ window.addEventListener('DOMContentLoaded',async()=>{
       for(let i=0; i<data.length; i++){
         result += component('div',{ class : "chat" },[data[i].message])
       }
-    container.innerHTML = result+formTag;
-
-    // 로딩 후 변수 선언
-    const submit = document.getElementById('submit');
-    const input = document.getElementById('userInput');
-    console.log( submit, input );
+    // container.innerHTML = result+formTag;
+    container.innerHTML = result;
 
   })
   .catch(err => console.log("에러발생",err))
@@ -58,7 +57,6 @@ submit.addEventListener('click',async ()=>{
     .then(data => console.log("submit 버튼 작동, post를 보냅니다.", data))
     .catch(err => console.error(err + "이러한 에러 발생"));
 
-
     const response = await fetch('/read-data'); // 요청 날리기
     console.log( "53번줄 response.json : "+response.json());
     response.json() // 반은 데이터 변환
@@ -66,11 +64,11 @@ submit.addEventListener('click',async ()=>{
       console.log("then 실행");
       console.table(data);
 
-      let formTag = `
-      <label class="flex">
-        <input type="text" name="massage" id="userInput"> 
-        <div class="btn" id="submit">요청</div>
-      </label>
+      const formTag = `
+        <label class="flex">
+          <input type="text" name="massage" id="userInput"> 
+          <div class="btn" id="submit">요청</div>
+        </label>
       `;
 
       // 반복하여 컴포넌트 생성하는 로직 추가
@@ -78,7 +76,8 @@ submit.addEventListener('click',async ()=>{
         for(let i=0; i<data.length; i++){
           result += component('div',{ class : "chat" },[data[i].message])
         }
-      container.innerHTML = result+formTag;
+      // container.innerHTML = result+formTag;
+      container.innerHTML = result;
     })
     .catch(err => console.log("에러발생",err))  
   }
