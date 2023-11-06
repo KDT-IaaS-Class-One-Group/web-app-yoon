@@ -1,4 +1,4 @@
-import { component } from "./component.js";
+import { component } from "./basic.js";
 
 // 반복하여 컴포넌트 생성하는 로직 추가
 export const addComponent = (data)=>{
