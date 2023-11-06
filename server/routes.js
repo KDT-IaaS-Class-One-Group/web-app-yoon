@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
 const express = require('express');
 const router = express.Router();
 
@@ -38,7 +38,7 @@ router.post('/save-text', (req, res) => {
   texts.push(text);
 
   // 3. 파일에 업데이트 된 내용 저장
-  fs.writeFile(filePath, JSON.stringify(texts, null, 2), (err) => {
+  fs.writeFile(filePath, JSON.stringify(texts, null, 2), () => {
       if (err) {
         return res.status(500).json({ error: 'Failed to write to the file.' });
       }
