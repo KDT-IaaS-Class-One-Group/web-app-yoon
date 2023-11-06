@@ -58,13 +58,9 @@ submit.addEventListener('click',()=>{
     const writeJson = writeJson();
     // 함수를 실행하여 promise 객체를 저장하는 것이 포인트
     Promise.all(writeJson)
-    .then(([writeResult, readResult])=>{
-      // console.log(writeResult);
-      // console.log(readResult);
-    })
-    // then 메서드 안에서 함수 호출이 아니라 함수 참조를 전달할 것
     // .then(console.log('실행 완료, readJson 시작'))
     .then(readJson((data)=>{addComponent(data)}))
+    // 호출하는 것이 올바른 패턴은 아니라고 하나. 잘 되는지 체크해본다.
     .then(console.log('모든 로직 실행 완료'))
     .catch(err => console.log(err +"promise all 에러"))
   }
