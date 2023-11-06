@@ -6,6 +6,7 @@ import { User } from "./module/class.js";
 const container = document.getElementById('container');
 const submit = document.getElementById('submit');
 const input = document.getElementById('userInput');
+console.log( submit, input );
 
 
 window.addEventListener('DOMContentLoaded',async()=>{
@@ -19,9 +20,10 @@ window.addEventListener('DOMContentLoaded',async()=>{
     console.log(data);
 
     let formTag = `
-    <form action="/save-text" method="POST">
-        <input type="text" id="userInput" name="userInput"> <div class="btn" id="submit">요청</div>
-      </form>
+    <label class="flex">
+      <input type="text" name="massage" id="userInput"> 
+      <div class="btn" id="submit">요청</div>
+    </label>
     `;
 
     // 반복하여 컴포넌트 생성하는 로직 추가
@@ -37,9 +39,10 @@ window.addEventListener('DOMContentLoaded',async()=>{
 
 
 submit.addEventListener('click',async ()=>{
+  console.log("submit 이벤트 발생");
   // ! 모듈로 나눠봄직한 writefile 로직
   if(input.value === ""){
-    console.error("다시 입력해주십시오")
+    console.log("다시 입력해주십시오");
   } else {
   let inputValue = new User(input.value);
   console.log("dlsvnt",inputValue);
@@ -62,9 +65,10 @@ submit.addEventListener('click',async ()=>{
     console.table(data);
 
     let formTag = `
-    <form action="/save-text" method="POST">
-        <input type="text" id="userInput" name="userInput"> <div class="btn" id="submit">요청</div>
-      </form>
+    <label class="flex">
+      <input type="text" name="massage" id="userInput"> 
+      <div class="btn" id="submit">요청</div>
+    </label>
     `;
 
     // 반복하여 컴포넌트 생성하는 로직 추가
