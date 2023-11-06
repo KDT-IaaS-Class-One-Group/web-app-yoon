@@ -13,6 +13,7 @@ const input = document.getElementById('userInput');
 console.log( submit, input, body );
 
 
+
 window.addEventListener('DOMContentLoaded',()=>{
   readJson((data)=>{    
     addComponent(data);
@@ -21,24 +22,28 @@ window.addEventListener('DOMContentLoaded',()=>{
 
 submit.addEventListener('click',()=>{
   console.log("submit 이벤트 발생");
-  // ! 모듈로 나눠봄직한 writefile 로직
   if(input.value === ""){
     console.log("다시 입력해주십시오");
   } else {
 
-    new Promise((resolve, reject) => {
+    function WritePromise(){
+      new Promise((resolve, reject) => {
       try {
         resolve(
           writeJson()
-
-        )
-
-      } catch(err){
-        console.error("오류 발생, promise", err)
+          readJson((data)=>{    
+            addComponent(data);
+          });
+        );
+      } catch (error) {
+        reject(console.error("오류 발생, promise", err));
       }
-      readJson((data)=>{    
-        addComponent(data);
-      });
-    })
+      }
+    }
   }
-})
+);
+
+   // writeJson()
+      // readJson((data)=>{    
+      //   addComponent(data);
+      // });

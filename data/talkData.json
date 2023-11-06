@@ -43,5 +43,10 @@
     "type": "user",
     "message": "인풋이 잘 작동되나?",
     "timestamp": "12시 6분"
+  },
+  {
+    "type": "user",
+    "message": "asdasdasd test",
+    "timestamp": "12시 34분"
   }
 ]

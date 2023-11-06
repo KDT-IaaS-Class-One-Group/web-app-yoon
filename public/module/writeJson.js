@@ -13,9 +13,9 @@ const input = document.getElementById('userInput');
     },
     body: JSON.stringify({inputValue})
   })
-  .then(data => 
-    console.log("submit 버튼 작동, post를 보냅니다.", data)
-    )
+  .then(data => {
+    console.log("submit 버튼 작동, post를 보냅니다.", data);
+  })
   .catch(
     err => console.error(err + "이러한 에러 발생")
     );

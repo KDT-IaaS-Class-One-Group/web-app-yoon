@@ -1,5 +1,4 @@
-console.log('hbg');
-// ! 햄버거 변수, 나중에 수정해야 한다.
+console.log('hbg module rdy');
 const topbtn = document.getElementById('hbg-top');
 const hbgCont = document.getElementById('hamburgerContainer');
 const root = document.getElementById('root');
