@@ -13,18 +13,11 @@ console.log( submit, input, body );
 window.addEventListener('DOMContentLoaded',async()=>{
   // ! 모듈로 나눠봄직한 readJson 로직
   const response = await fetch('/read-data') // 요청 날리기
-  response.json() // 반은 데이터 변환
+  await response.json() // 받은 데이터 변환
   .then(data => {
     console.log("then 실행");
     console.table(data);
     console.log(data);
-
-    const formTag = `
-    <label class="flex">
-      <input type="text" name="massage" id="userInput"> 
-      <div class="btn" id="submit">요청</div>
-    </label>
-    `;
 
     // 반복하여 컴포넌트 생성하는 로직 추가
     let result ="";
@@ -33,7 +26,6 @@ window.addEventListener('DOMContentLoaded',async()=>{
       }
     // container.innerHTML = result+formTag;
     container.innerHTML = result;
-
   })
   .catch(err => console.log("에러발생",err))
 });
@@ -58,18 +50,10 @@ submit.addEventListener('click',async ()=>{
     .catch(err => console.error(err + "이러한 에러 발생"));
 
     const response = await fetch('/read-data'); // 요청 날리기
-    console.log( "53번줄 response.json : "+response.json());
     response.json() // 반은 데이터 변환
     .then(data => {
       console.log("then 실행");
       console.table(data);
-
-      const formTag = `
-        <label class="flex">
-          <input type="text" name="massage" id="userInput"> 
-          <div class="btn" id="submit">요청</div>
-        </label>
-      `;
 
       // 반복하여 컴포넌트 생성하는 로직 추가
       let result ="";

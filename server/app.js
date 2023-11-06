@@ -32,7 +32,7 @@ app.get('/read-data', async (req, res) => {
 // 2. 새로운 데이터 업로드 후에
 // 3. 업데이트 된 내용을 다시 저장한다.
 app.post('/save-text', (req, res) => {
-  const text = req.body.userInput;
+  const text = req.body.inputValue;
   console.table(req.body); // 확인 완료
   // 파일 경로 설정
   const filePath = path.join(__dirname, '../data/talkData.json');
